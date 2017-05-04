@@ -4,9 +4,9 @@ require 'includes/config.php';
 // $userDetails = (!empty($_GET['username']) && !empty($_GET['email']) && !empty($_GET['password'])) ? htmlspecialchars($_GET['username'] && $_GET['email'] && $_GET['password'],  ENT_QUOTES, 'utf-8') : '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // define variables and set to empty values
+
     $username = $email = $password = '';
-    // Add data from form
+    
     $username = e($_POST['username']);
     $email = e($_POST['email']);
     $password = e($_POST['password']);
@@ -41,6 +41,8 @@ require 'partials/navigation.php';
 
 ?>
 
+<!-- beginning of registration form -->
+
 <div class="container">
 
   <div class="row">
@@ -48,9 +50,9 @@ require 'partials/navigation.php';
     </div>
   </div>
 
-  <div class="row">
+  
     <div class="col-md-8 col-md-offset-2">
-      <div class="panel panel-default">
+      <div class="panel panel-danger">
         <div class="panel-heading">Register</div>
         <div class="panel-body">
           <form class="form-horizontal" role="form" method="POST" action="register.php" onsubmit="return validate()">
@@ -89,7 +91,7 @@ require 'partials/navigation.php';
 
           <div class="form-group">
             <div class="col-md-6 col-md-offset-4">
-              <button type="submit" class="btn btn-primary">Register</button>
+              <button type="submit" class="btn btn-info">Register</button>
             </div>
           </div>
           <div><?= showMessages(); ?></div>
@@ -100,6 +102,8 @@ require 'partials/navigation.php';
       </div>
     </div>
   </div>
+
+ <!-- end of registration form -->
 
 <?php 
     require 'partials/footer.php';
