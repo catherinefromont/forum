@@ -16,12 +16,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && loggedIn()) {
 
 
     $content = e($_POST['content']);
+    $errors['content'] = validateContent($content);
+
+
+    if ($errors['content']) {
+addMessage('error', "Please enter a comment");
+    redirect("view.php?id=" . $topic_id);
+  }
+else{
+
+  
 
     addComment($dbh, $topic_id, $content);
     addMessage('success', "You have successfully added a comment");
     redirect("view.php?id=" . $topic_id);
 
-
+  }
   }
 
   if ($_POST["_method"] == "delete") {
@@ -99,7 +109,7 @@ require 'partials/navigation.php';
                       <input name="topic_id" value="<?= $viewTopic['id'] ?>" type="hidden" >
 
                       <textarea name="content" class="form-control animated" placeholder="Leave a comment"></textarea>
-
+                      <span class="text-danger"><?= !empty($errors['content']) ? $errors['content'] : ''  ?></span>
                       <button class="btn btn-info pull-right" style="margin-top:10px" type="submit">
                         Post
                       </button>

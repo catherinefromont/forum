@@ -44,6 +44,85 @@ function e($value)
 	return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
 }
 
+function validateTitle($title) {
+
+  if (empty($title)) {
+    return "Title is required";
+  }
+  
+  else if(strlen ($title) >= 40){
+    return "Title cannot be longer than 40 characters";
+  }
+  
+  return false;
+}
+
+function validateContent($content) {
+
+  if (empty($content)) {
+    return "Content is required";
+  }
+  
+  else if(strlen ($content) >= 200){
+    return "Content cannot be longer than 200 characters";
+  }
+  
+  return false;
+}
+
+
+
+
+
+function validateName($username) {
+
+  if (empty($username)) {
+    return "Username is required";
+  }
+  
+  else if(strlen ($username) >= 40){
+    return "Username cannot be longer than 40 characters";
+  }
+  
+  return false;
+}
+
+
+
+function ValidateEmail($email) {
+  if (empty($email)) {
+  return "Email is required";
+  }
+  else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      return "Please enter a correct Email Address";
+  }
+  else if($email > 100){
+  return "Email cannot be longer than 100 characters";
+  }
+  return false;
+}
+
+
+function ValidatePassword($password) {
+  if (empty($password)) {
+  return "Password is required";
+  }
+}
+
+
+// function ValidateAddress($address) {
+//   if (empty($address)) {
+//   return "Address is required";
+//   }
+//   else if (!preg_match("/^[0-9]+\ +[a-zA-Z]/", $address)) {
+//      return "Please enter a correct address";
+//   }
+//   else if(strlen($address) > 200){
+//   return "Address cannot be longer than 200 characters";
+//   }
+//   return false;
+// }
+
 // -----------------------------------------------------------------------------
 // showing timestamp function
 // -----------------------------------------------------------------------------
@@ -158,7 +237,7 @@ function connectDatabase($host,$database,$user,$pass){
 function addUser($dbh, $username, $email, $password) {
 
 
-	$sth = $dbh->prepare("INSERT INTO users VALUES (NULL, :username, :email, :password)");
+	$sth = $dbh->prepare("INSERT INTO users VALUES (NULL, :username, :email, :password, 0)");
 
 
 

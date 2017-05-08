@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.35)
 # Database: forum
-# Generation Time: 2017-05-04 04:28:21 +0000
+# Generation Time: 2017-05-08 03:42:30 +0000
 # ************************************************************
 
 
@@ -39,20 +39,6 @@ CREATE TABLE `comments` (
   CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`topic_id`) REFERENCES `topics` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-LOCK TABLES `comments` WRITE;
-/*!40000 ALTER TABLE `comments` DISABLE KEYS */;
-
-INSERT INTO `comments` (`id`, `content`, `user_id`, `topic_id`, `updated_at`, `created_at`)
-VALUES
-	(5,' m ',4,9,'2017-05-04 10:44:32','2017-05-04 10:44:32'),
-	(6,' ,m,m ,m ,m ,m ,. .,.,lkjnhjbjhbgb',4,4,'2017-05-04 10:45:02','2017-05-04 10:45:02'),
-	(7,'adsklfnkadslf',4,4,'2017-05-04 10:46:08','2017-05-04 10:46:08'),
-	(8,'fjdha',4,4,'2017-05-04 10:47:07','2017-05-04 10:47:07'),
-	(9,'dcbkjcd ncx',4,4,'2017-05-04 10:47:29','2017-05-04 10:47:29'),
-	(10,'TRNJSKEAGVEDJS',4,10,'2017-05-04 15:09:30','2017-05-04 15:09:30');
-
-/*!40000 ALTER TABLE `comments` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table topics
@@ -78,9 +64,7 @@ LOCK TABLES `topics` WRITE;
 INSERT INTO `topics` (`id`, `title`, `content`, `user_id`, `created_at`, `updated_at`)
 VALUES
 	(2,'Title','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu porta purus, quis elementum leo. Quisque quis arcu ac felis convallis rhoncus. Pellentesque dignissim tortor eget nunc convallis hendrerit. Morbi rhoncus viverra massa sed volutpat. Nullam non nisi congue lacus feugiat consectetur at id ipsum. Cras cursus tempor feugiat. Duis et justo eu lorem facilisis accumsan vel sed lectus. Aliquam erat volutpat.',4,'2017-05-01 11:43:32','2017-05-01 11:37:50'),
-	(4,'Title1','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu porta purus, quis elementum leo. Quisque quis arcu ac felis convallis rhoncus. Pellentesque dignissim tortor eget nunc convallis hendrerit. Morbi rhoncus viverra massa sed volutpat. Nullam non nisi congue lacus feugiat consectetur at id ipsum. Cras cursus tempor feugiat. Duis et justo eu lorem facilisis accumsan vel sed lectus. Aliquam erat volutpat.',5,'2017-05-01 11:48:48','2017-05-01 11:37:50'),
-	(9,'Test2','Qui occaecat ut reprehenderit enim numquam molestiae laboris asperiores atque non corrupti, voluptas.',4,'2017-05-04 10:38:32','2017-05-04 10:38:32'),
-	(10,'Test3','At aliquid eum voluptatibus sunt, animi, fugiat, doloribus exercitation consequatur ut aut at inventore asperiores.',4,'2017-05-04 12:15:13','2017-05-04 12:15:13');
+	(4,'Title1','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu porta purus, quis elementum leo. Quisque quis arcu ac felis convallis rhoncus. Pellentesque dignissim tortor eget nunc convallis hendrerit. Morbi rhoncus viverra massa sed volutpat. Nullam non nisi congue lacus feugiat consectetur at id ipsum. Cras cursus tempor feugiat. Duis et justo eu lorem facilisis accumsan vel sed lectus. Aliquam erat volutpat.',5,'2017-05-01 11:48:48','2017-05-01 11:37:50');
 
 /*!40000 ALTER TABLE `topics` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -108,7 +92,20 @@ VALUES
 	(4,'Catherine','catherinegfromont@gmail.com','$2y$10$/GPJQ1TUm8S8IKYQIE.iPu5BjdQ0uYooOY0jANqfd3sfsfHP7Pnvy',1),
 	(5,'Catherine1','catherinegfromont1@gmail.com','$2y$10$/GPJQ1TUm8S8IKYQIE.iPu5BjdQ0uYooOY0jANqfd3sfsfHP7Pnvy',0),
 	(6,'vosyfe','kezuxibi@gmail.com','$2y$10$8xqc13dAeUxalTd/INnv.OgHptuv.kARNCZhLluUpD1O/HlUpsVkW',0),
-	(7,'civeril','paxawebit@yahoo.com','$2y$10$GXhZvqdSABGeqVA8/D1RcOAXaXYzDnEQUeaCk/WiutEMvkWfMZUyO',0);
+	(7,'civeril','paxawebit@yahoo.com','$2y$10$GXhZvqdSABGeqVA8/D1RcOAXaXYzDnEQUeaCk/WiutEMvkWfMZUyO',0),
+	(8,'livasikapy','codyf@hotmail.com','$2y$10$UI8NUiIcHC1aOTEdl9/L9OPndl95df/bLsbYay88oS9h6znPCY5JO',0),
+	(12,'wasohiky','mukad@gmail.com','$2y$10$.yziMb1MhTtxUqTbjsi/2OxdY/NJL7Ar2s8sYakPN7/NYnKYkFprW',0),
+	(13,'pedator','fisir@yahoo.com','$2y$10$8SosnvsBeWFNPL.c1qHKY.mc.yvOgUGEn8yEmWoyYH/Wo8n/f4vZa',0),
+	(14,'zexyw','seqaq@hotmail.com','$2y$10$7DoQuQYRy6i9W2yg7z3sYexRjAPvmngqWwDVq5UHgtoC3HfMZ6YMe',0),
+	(15,'mycahimuga','giqirop@gmail.com','$2y$10$VdogU4AOGugnZAaMy0NOeulMAMutDLfoKwsy.cCYZE1ykTZoJTg02',0),
+	(16,'komelydo','bokitumi@gmail.com','$2y$10$d4dXXpQbFyE0skeRJfmHDeAuwVvGBJ196KbpNteX5doy1pDeffhX2',0),
+	(17,'tygep','savaxekec@yahoo.com','$2y$10$jS6Fp2WbX82zIHa3gS6LMuItP6EMECB40Dzm7v/CMiLHZqZZrogcm',0),
+	(18,'lol','lol@lol.com','$2y$10$GVbEWtjAb/J.AShRG8vwbehpafuu4xY7WHswAiOKaomrkyizPAH4S',0),
+	(19,'nilygu','cufosoni@yahoo.com','$2y$10$tl2HRB/g75CbPjFkbaKI3eiOAusFyNAWF8OOzyOhsLFUQTiFx5UOu',0),
+	(20,'kezumitit','vyqebom@gmail.com','$2y$10$jgqnD1HYA0YpqOehbXJVMuyaLE8WUY5DJrezaksgA8YLGdJMPoTMi',0),
+	(21,'kezumitit','vyqebom@gmail.com','$2y$10$4sN4vBOEcKoRkAEPGcgCMOzHvl6PWgplxrebVhtUamiPt6XiJoBX.',0),
+	(22,'rihym','velevesi@gmail.com','$2y$10$PXIiAhRg1xscWg7riVwCWengmJCi9E7T4HADPJK3KtAnmfo7YmZhG',0),
+	(23,'wihapusa','lyjyhotyfo@gmail.com','$2y$10$fq60MRzVbhEU/0W7uWT6seS5yhOR56uncuiFHfMIBNzD3VTOCCJaK',0);
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;

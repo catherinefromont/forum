@@ -8,13 +8,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $title = e($_POST['title']);
     $content = e($_POST['content']);
+    $errors['title'] = validateTitle($title);
+    $errors['content'] = validateContent($content);
     
+
+    if (!$errors['title'] && !$errors['content']) {
     $didInsertWork = addTopic($dbh, $title, $content, $_SESSION['id']);
           
     addMessage('success', "You have successfully added a topic");
     redirect("index.php");
 
+}
 
+    
 
 
 
@@ -57,6 +63,7 @@ require 'partials/navigation.php';
                                 <div class="col-md-6">
                                     <input id="title" type="text" class="form-control" name="title" value="" autofocus="">
                                 </div>
+                                <span class="text-danger"><?= !empty($errors['title']) ? $errors['title'] : ''  ?></span>
                             </div>
 
                             
@@ -66,6 +73,7 @@ require 'partials/navigation.php';
                                 <div class="col-md-6">
                                     <textarea id="content" type="text" class="form-control" name="content" value="" autofocus="" ></textarea>
                                 </div>
+                                <span class="text-danger"><?= !empty($errors['content']) ? $errors['content'] : ''  ?></span>
                             </div>
 
                           
